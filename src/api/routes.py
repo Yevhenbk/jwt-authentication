@@ -1,11 +1,12 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+from datetime import timedelta
 from flask import Flask, request, jsonify, url_for, Blueprint
 from sqlalchemy import exc
 from api.models import db, Account
 from api.utils import generate_sitemap, APIException
-from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, JWTManager
 
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -54,7 +55,7 @@ def create_account():
         'password', None
     ) 
     
-    print(email, password, "###################################")
+    print(email, password)
     if not (password and email):
         return ({'error': 'Some fields are missing'}), 400
     
@@ -64,7 +65,6 @@ def create_account():
         password=generate_password_hash(password, method='pbkdf2:sha256', salt_length=16),
         is_active=True
     )
-    print(account, "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     
     
     try:
@@ -73,3 +73,14 @@ def create_account():
         
     except exc.IntegrityError:
         return ({'error': 'This email / phone number is already in use'}), 400
+
+
+@api.route('/private', methods=['GET'])
+@jwt_required()
+def handle_private():
+
+    response_body = {
+        "message": "Hello! You made it to the /private, this means that you are authorized and everything works well :)"
+    }
+
+    return jsonify(response_body), 200
