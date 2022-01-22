@@ -1,23 +1,28 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import PropTypes from "prop-types";
 
 import { Context } from "../store/appContext.js";
 
 import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+
 import "../../styles/modals.scss";
 
-const Signup = () => {
-  const { store, actions } = useContext(Context);
+const Login = (props) => {
   const { register, handleSubmit } = useForm();
+  const { store, actions } = useContext(Context);
+
+  const getLogin = (data) => {
+    let islogged = actions.login(data);
+    //console.log(islogged);
+    props.close();
+  };
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const signup = (data) => {
-    actions.signup(data);
-  };
 
   return (
     <>
@@ -25,15 +30,15 @@ const Signup = () => {
         <input
           type="button"
           className="signup-button ff"
-          value="Sign Up"
+          value="Login"
           onClick={handleShow}
         />
       </div>
 
-      <Modal show={show} onHide={handleClose}>
-        <form action="" method="post" onSubmit={handleSubmit(signup)}>
+      <Modal show={show} onHide={handleClose} className="modal show">
+        <form action="" method="post" onSubmit={handleSubmit(getLogin)}>
           <Modal.Header>
-            <Modal.Title>Register</Modal.Title>
+            <Modal.Title>Login</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
@@ -42,6 +47,7 @@ const Signup = () => {
                 <label htmlFor="email" className="labels-ls">
                   Email:
                 </label>
+
                 <input
                   type="email"
                   id="email"
@@ -49,9 +55,11 @@ const Signup = () => {
                   className="inputs-ls"
                   {...register("email")}
                 />
+
                 <label htmlFor="pwd" className="labels-ls">
                   Password:
                 </label>
+
                 <input
                   type="password"
                   id="pwd"
@@ -64,7 +72,12 @@ const Signup = () => {
           </Modal.Body>
 
           <Modal.Footer>
-            <input type="submit" value="Sign Up" className="signup-button" />
+            <input
+              type="submit"
+              value="Login"
+              className="signup-button"
+              onClick={handleClose}
+            />
           </Modal.Footer>
         </form>
       </Modal>
@@ -72,4 +85,7 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
+Login.propTypes = {
+  close: PropTypes.func,
+};

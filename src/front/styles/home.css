@@ -5,3 +5,13 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+.navbar-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+}
+.ff {
+  margin: 0 1rem;
+}

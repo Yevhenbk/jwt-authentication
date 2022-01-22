@@ -1,5 +1,5 @@
 
-const BASE_URL = "https://3001-green-cuckoo-njpvma4c.ws-eu18.gitpod.io/api/";
+const BASE_URL = "https://3001-4geeksacademy-reactflask-1e0uh3p46pp.ws-eu27.gitpod.io/api/";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -69,41 +69,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (!resp.ok) {
 							throw Error("Invalid info");
 						}
+						// console.log(response.json)
 						return response.json();
+
 					})
 					.then(responseAsJson => {
 						localStorage.setItem("token", responseAsJson);
 					})
 					.catch(error => console.error("Unknown error", error));
+			},
+
+
+			// Use getActions to call a function within a fuction
+			exampleFunction: () => {
+				getActions().changeColor(0, "green");
+			},
+
+			getMessage: () => {
+				// fetching data from the backend
+				fetch(process.env.BACKEND_URL + "/api/hello")
+					.then(resp => resp.json())
+					.then(data => setStore({ message: data.message }))
+					.catch(error => console.log("Error loading message from backend", error));
+			},
+			changeColor: (index, color) => {
+				//get the store
+				const store = getStore();
+
+				//we have to loop the entire demo array to look for the respective index
+				//and change its color
+				const demo = store.demo.map((elm, i) => {
+					if (i === index) elm.background = color;
+					return elm;
+				});
+
+				//reset the global store
+				setStore({ demo: demo });
 			}
-
-
-			// // Use getActions to call a function within a fuction
-			// exampleFunction: () => {
-			// 	getActions().changeColor(0, "green");
-			// },
-
-			// getMessage: () => {
-			// 	// fetching data from the backend
-			// 	fetch(process.env.BACKEND_URL + "/api/hello")
-			// 		.then(resp => resp.json())
-			// 		.then(data => setStore({ message: data.message }))
-			// 		.catch(error => console.log("Error loading message from backend", error));
-			// },
-			// changeColor: (index, color) => {
-			// 	//get the store
-			// 	const store = getStore();
-
-			// 	//we have to loop the entire demo array to look for the respective index
-			// 	//and change its color
-			// 	const demo = store.demo.map((elm, i) => {
-			// 		if (i === index) elm.background = color;
-			// 		return elm;
-			// 	});
-
-			// 	//reset the global store
-			// 	setStore({ demo: demo });
-			// }
 		}
 	};
 };

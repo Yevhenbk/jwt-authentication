@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+:root {
+  --primary-color: #b95f89;
+  --primary-hover: #924a6c;
+  --secondary-color: #333745;
+  --background-body: #ffffff;
+}
+body {
+  font-family: "Roboto";
+  background-color: var(--background-body);
+}
+.modal-header {
+  border: none;
+  padding-bottom: 0;
+  justify-content: left;
+}
+.modal-title {
+  color: var(--secondary-color);
+}
+.modal-content {
+  border: none;
+  margin-top: 20rem;
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.253);
+}
+.modal-footer {
+  border: none;
+}
+.inputs-holder {
+  display: flex;
+  flex-direction: column;
+}
+.labels-ls {
+  align-self: baseline;
+  padding: 1rem 0;
+}
+.inputs-holder label {
+  font-weight: 400;
+}
+.inputs-ls {
+  border: 1px solid grey;
+  padding: 0.5rem;
+  border-radius: 3px;
+  outline: none;
+}
+.signup-button {
+  padding: 1rem 1.5rem;
+  font-size: medium;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+  background-color: var(--primary-color);
+  color: white;
+}
+.signup-button:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+.fade {
+  opacity: 1;
+}
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0.5;
+}
