@@ -50,10 +50,15 @@ export const Navbar = () => {
 
 			{!store.islogged ? (
 				<div className="navbar">
-					<Login />
+					<div className="navbar-modal">
+						<Login />
+						<Signup />
+					</div>
 				</div>
 			) : (
-				<div></div>
+				<div>
+					<input type="button" onClick={actions.logOut} className="signup-buttom" />
+				</div>
 			)}
 		</nav>
 	);
