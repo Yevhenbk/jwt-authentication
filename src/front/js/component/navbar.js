@@ -13,51 +13,23 @@ import Button from "react-bootstrap/Button";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-	const [show, setShow] = useState(false);
-	const [logged, setLogged] = useState(false);
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
-
-	useEffect(() => {
-		if (localStorage.getItem("token")) {
-			actions.setLoggedIn();
-		} else {
-			actions.setLoggedOut();
-		}
-		function checkUserData() {
-			const token = localStorage.getItem("token");
-			console.log("hello");
-
-			if (token) {
-				actions.setLoggedIn();
-			} else {
-				actions.setLoggedOut();
-			}
-		}
-
-		window.addEventListener("storage", checkUserData);
-
-		return () => {
-			window.removeEventListener("storage", checkUserData);
-		};
-	}, []);
 
 	return (
-		<nav className="navbar fixed-top" collapseOnSelect expand="lg">
+		<nav className="navbar-fixed-top">
 			{/* <Link to="/">
 				<img className="navbar-brand " src={LogoPositivo} />
 			</Link> */}
 
 			{!store.islogged ? (
-				<div className="navbar">
+				<div className="ls-navbar">
 					<div className="navbar-modal">
 						<Login />
 						<Signup />
 					</div>
 				</div>
 			) : (
-				<div>
-					<input type="button" onClick={actions.logOut} className="signup-buttom" />
+				<div className="navbar-modal">
+					<input type="button" onClick={actions.logOut} className="signup-button" value="Logout" />
 				</div>
 			)}
 		</nav>

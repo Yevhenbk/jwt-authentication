@@ -9,14 +9,13 @@ import Button from "react-bootstrap/Button";
 
 import "../../styles/modals.scss";
 
-const Login = (props) => {
+const Login = () => {
   const { register, handleSubmit } = useForm();
   const { store, actions } = useContext(Context);
 
   const getLogin = (data) => {
     let islogged = actions.login(data);
-    //console.log(islogged);
-    props.close();
+    console.log(islogged);
   };
 
   const [show, setShow] = useState(false);
@@ -86,6 +85,3 @@ const Login = (props) => {
 };
 
 export default Login;
-Login.propTypes = {
-  close: PropTypes.func,
-};

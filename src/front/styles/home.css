@@ -15,3 +15,12 @@
 .ff {
   margin: 0 0.75rem;
 }
+body {
+  background-image: url(https://www.vhv.rs/file/max/17/176483_ez-emote-png.jpg);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 50%;
+  height: 50%;
+}

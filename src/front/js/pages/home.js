@@ -12,8 +12,7 @@ export const Home = () => {
 
 	return (
 		<div className="navbar-modal">
-			<Login />
-			<Signup />
+			<Navbar />
 		</div>
 	);
 };

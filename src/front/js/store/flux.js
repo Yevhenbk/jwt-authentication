@@ -1,5 +1,5 @@
 
-const BASE_URL = "https://3001-4geeksacademy-reactflask-1e0uh3p46pp.ws-eu27.gitpod.io/api/";
+const BASE_URL = "https://3001-yevhenbk-jwtauthenticati-0yyy04fv2c6.ws-eu27.gitpod.io/api/";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -44,7 +44,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			logOut: () => {
 				localStorage.removeItem("token");
-				localStorage.removeItem("name");
 				setStore({ islogged: false });
 				//redirect("/home");
 			},
