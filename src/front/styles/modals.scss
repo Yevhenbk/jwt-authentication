@@ -13,10 +13,12 @@ body {
 .modal-header {
   border: none;
   padding-bottom: 0;
-  justify-content: left;
+  justify-content: center;
 }
 .modal-title {
   color: var(--secondary-color);
+  margin: 1rem 0;
+  font-size: large;
 }
 .modal-content {
   border: none;
@@ -29,6 +31,7 @@ body {
 .inputs-holder {
   display: flex;
   flex-direction: column;
+  padding: 0 2rem;
 }
 .labels-ls {
   align-self: baseline;
@@ -45,12 +48,14 @@ body {
   outline: none;
 }
 .signup-button {
-  padding: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
   font-size: medium;
   border: 1px solid var(--primary-color);
   border-radius: 3px;
   background-color: var(--primary-color);
   color: white;
+  width: 100%;
+  margin: 2rem 2rem;
 }
 .signup-button:hover {
   background-color: var(--primary-hover);
@@ -62,4 +67,7 @@ body {
 .modal-backdrop.fade {
   filter: alpha(opacity=0);
   opacity: 0.5;
+}
+.modal-dialog {
+  max-width: 45rem;
 }

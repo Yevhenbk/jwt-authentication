@@ -24,7 +24,7 @@ const Signup = () => {
       <div className="myServiceButtonHolder">
         <input
           type="button"
-          className="signup-button ff"
+          className="ff"
           value="Sign Up"
           onClick={handleShow}
         />
