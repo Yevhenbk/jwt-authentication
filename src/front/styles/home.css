@@ -21,6 +21,10 @@
   background-color: var(--primary-color);
   color: white;
 }
+.ff:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
 body {
   background-image: url(https://www.vhv.rs/file/max/17/176483_ez-emote-png.jpg);
   background-repeat: no-repeat;
