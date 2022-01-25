@@ -17,7 +17,7 @@ body {
 }
 .modal-title {
   color: var(--secondary-color);
-  margin: 1rem 0;
+  margin: 1rem 0 0;
   font-size: large;
 }
 .modal-content {
@@ -39,13 +39,15 @@ body {
 }
 .inputs-holder label {
   font-weight: 400;
+  font-size: medium;
 }
 .inputs-ls {
-  border: none;
-  border-bottom: 1px solid rgb(189, 189, 189);
-  padding: 0.5rem;
-  border-radius: none;
+  border: 1px solid grey;
+  padding: 0.75rem;
+  border-radius: 3px;
   outline: none;
+  margin: 0.75rem 0;
+  font-size: medium;
 }
 .signup-button {
   padding: 1rem 1.25rem;
@@ -55,7 +57,7 @@ body {
   background-color: var(--primary-color);
   color: white;
   width: 100%;
-  margin: 2rem 2rem;
+  margin: 1rem 2rem 2rem;
 }
 .signup-button:hover {
   background-color: var(--primary-hover);
