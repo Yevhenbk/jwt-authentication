@@ -1,7 +1,7 @@
 # WebApp boilerplate with React JS and Flask API
 
 
-![This is an image](blob:https://web.telegram.org/e816b961-2b5d-4e50-ae31-45390780584f)
+![This is an image](https://pbs.twimg.com/media/FKCrSHRWUAMHwD1?format=png&name=large)
 
 ### Styles
 You can update the `styles/index.scss` or create new `.scss` files inside `styles/` and import them into your current scss or js files depending on your needs.
