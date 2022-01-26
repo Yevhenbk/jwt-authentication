@@ -66,7 +66,7 @@ const Login = () => {
                   id="pwd"
                   name="pwd"
                   className="inputs-ls"
-                  placeholder="********"
+                  placeholder="ex@mpl1%"
                   {...register("password")}
                 />
               </div>

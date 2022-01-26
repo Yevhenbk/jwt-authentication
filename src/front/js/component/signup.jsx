@@ -49,7 +49,7 @@ const Signup = () => {
                   id="email"
                   name="email"
                   className="inputs-ls"
-                  placeholder="exmple@gmail.com"
+                  placeholder="example@gmail.com"
                   {...register("email")}
                 />
                 <label htmlFor="pwd" className="labels-ls">
@@ -60,7 +60,7 @@ const Signup = () => {
                   id="pwd"
                   name="pwd"
                   className="inputs-ls"
-                  placeholder="********"
+                  placeholder="ex@mpl1%"
                   {...register("password")}
                 />
               </div>
