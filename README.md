@@ -1,4 +1,4 @@
-# WebApp boilerplate with React JS and Flask API using Python
+# WebApp boilerplate with React JS and Flask API
 Almost every website in the world has user authentication, in this project user authentication is implemented using the Python Flask framework for building a backend REST API and React.js and sessionStorage API for the front end web application.
 
 
