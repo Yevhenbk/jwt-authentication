@@ -3,7 +3,7 @@ Almost every website in the world has user authentication, in this project user 
 
 
 ![This is an image](https://pbs.twimg.com/media/FKCrSHRWUAMHwD1?format=png&name=large)
-![This is an image](https://pbs.twimg.com/media/FKCrSHQWQAsNfGm?format=png&name=large)
+<!-- ![This is an image](https://pbs.twimg.com/media/FKCrSHQWQAsNfGm?format=png&name=large) -->
 
 ### Styles
 You can update the `styles/index.scss` or create new `.scss` files inside `styles/` and import them into your current scss or js files depending on your needs.
