@@ -10,14 +10,15 @@
   flex-direction: row;
   justify-content: end;
   padding: 2rem;
-  background-color: var(--secondary-color);
+  background-color: white;
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 40%);
 }
 .ff {
   margin: 0 0.75rem;
   padding: 0.75rem 1.25rem;
-  font-size: medium;
+  font-size: 18px;
   border: 1px solid var(--primary-color);
-  border-radius: 3px;
+  border-radius: 1px;
   background-color: var(--primary-color);
   color: white;
 }
@@ -26,7 +27,7 @@
   border-color: var(--primary-hover);
 }
 body {
-  background-image: url(https://www.vhv.rs/file/max/17/176483_ez-emote-png.jpg);
+  /* background-image: url(https://www.vhv.rs/file/max/17/176483_ez-emote-png.jpg); */
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;

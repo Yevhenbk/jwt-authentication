@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext.js";
 
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import CloseButton from "react-bootstrap/CloseButton";
 
 import "../../styles/modals.scss";
 
@@ -38,6 +38,7 @@ const Login = () => {
         <form action="" method="post" onSubmit={handleSubmit(getLogin)}>
           <Modal.Header>
             <Modal.Title>Login</Modal.Title>
+            <CloseButton onClick={handleClose} />
           </Modal.Header>
 
           <Modal.Body>
@@ -52,6 +53,7 @@ const Login = () => {
                   id="email"
                   name="email"
                   className="inputs-ls"
+                  placeholder="example@gmail.com"
                   {...register("email")}
                 />
 
@@ -64,6 +66,7 @@ const Login = () => {
                   id="pwd"
                   name="pwd"
                   className="inputs-ls"
+                  placeholder="********"
                   {...register("password")}
                 />
               </div>

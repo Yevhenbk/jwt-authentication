@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 
 import { Context } from "../store/appContext.js";
 
+import CloseButton from "react-bootstrap/CloseButton";
 import Modal from "react-bootstrap/Modal";
 import "../../styles/modals.scss";
 
@@ -34,6 +35,7 @@ const Signup = () => {
         <form action="" method="post" onSubmit={handleSubmit(signup)}>
           <Modal.Header>
             <Modal.Title>Register</Modal.Title>
+            <CloseButton onClick={handleClose} />
           </Modal.Header>
 
           <Modal.Body>
@@ -47,6 +49,7 @@ const Signup = () => {
                   id="email"
                   name="email"
                   className="inputs-ls"
+                  placeholder="exmple@gmail.com"
                   {...register("email")}
                 />
                 <label htmlFor="pwd" className="labels-ls">
@@ -57,6 +60,7 @@ const Signup = () => {
                   id="pwd"
                   name="pwd"
                   className="inputs-ls"
+                  placeholder="********"
                   {...register("password")}
                 />
               </div>
