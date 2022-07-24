@@ -2,7 +2,7 @@
 Almost every website in the world has user authentication, in this project user authentication is implemented using the Python Flask framework for building a backend REST API and React.js and sessionStorage API for the front end web application.
 
 
-![This is an image](https://pbs.twimg.com/media/FKCrSHRWUAMHwD1?format=png&name=large)
+![This is an image](https://github.com/Yevhenbk/jwt-authentication/blob/main/src/front/img/photo_5976375146627316210_w.jpg)
 <!-- ![This is an image](https://pbs.twimg.com/media/FKCrSHQWQAsNfGm?format=png&name=large) -->
 
 ### Styles
